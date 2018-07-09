@@ -1,0 +1,393 @@
+.header {
+    padding: 0 30px;
+    font-size: 14px;
+    background: #fff;
+    border-bottom: 1px solid #fff;
+
+    @media (--tablet) {
+        padding: 0 10px;
+    }
+
+}
+
+.menu {
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 38px 0;
+    color: var(--darkGrayText);
+    border-bottom: 2px solid #eee;
+
+    @media (--tablet) {
+        padding: 0;
+    }
+
+    &__logo {
+
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        img {
+            width: 211px;
+            height: 41px;
+        }
+
+        @media (--tablet) {
+
+            position: static;
+            transform: none;
+            margin: 10px 0;
+
+            img {
+                display: block;
+                width: 180px;
+                height: auto;
+            }
+
+        }
+
+    }
+
+    &__item {
+
+        margin: 0 15px;
+        cursor: pointer;
+
+
+        &:nth-of-type(2) {
+            margin-left: 0;
+        }
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        &--right {
+            margin-left: auto;
+        }
+
+        &--left {
+            margin-right: auto;
+        }
+
+    }
+
+    &__search-input {
+
+        input {
+            display: block;
+            position: absolute;
+            right: 1px;
+            top: 30px;
+            z-index: 1;
+            width: 200px;
+            height: 40px;
+            padding: 0 10px;
+            cursor: text;
+            border: 1px solid #ff1a47;
+            color: #49494b;
+            font-size: 14px;
+            font-weight: 400;
+            background: url(/src/assets/img/icons/loupe-small.png) right center no-repeat #fff;
+            background-position-x: 95%;
+            outline: none;
+            transition: width .3s ease, opacity .3s ease;
+            opacity: 0;
+        }
+
+        input:focus {
+            width: 400px;
+            opacity: 1;
+        }
+
+    }
+
+    &__mobile-toggler {
+
+        color: var(--magentaColor);
+        padding: 10px;
+
+        .burger {
+            display: block;
+            width: 35px;
+            height: 35px;
+        }
+
+        &:hover {
+            background: var(--magentaColor);
+            color: #fff;
+        }
+
+    }
+
+}
+
+.nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 20px;
+    background: #fff;
+    box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.12);
+    color: var(--blackText);
+    font-weight: 600;
+    font-size: 14px;
+
+    @media (--tablet) {
+        padding: 16px 10px;
+    }
+
+    &-wrapper {
+        /*position: sticky;*/
+        /*top: 0;*/
+    }
+
+    &__item {
+
+        margin: 0 32px;
+
+        &--left {
+            margin-right: auto;
+        }
+        &--right {
+            margin-left: auto;
+        }
+
+        &--radio {
+
+            padding-left: 10px;
+            position: relative;
+            cursor: pointer;
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                transform: translate(-120%, 3px);
+                background: url('/src/assets/img/icons/radio.png');
+                width: 23px;
+                height: 14px;
+            }
+
+        }
+
+        &--grid {
+
+            padding-right: 10px;
+            position: relative;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 100%;
+                transform: translate(0, -1px);
+                background: url('/src/assets/img/icons/table.png');
+                width: 20px;
+                height: 19px;
+            }
+
+        }
+
+    }
+}
+
+
+.player-wrapper {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    height: 95px;
+    /*max-width: 1240px;*/
+    align-items: flex-start;
+    margin: 0 auto;
+    background: var(--magentaColor);
+    color: #fff;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -9px;
+        left: 35px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        border-color: transparent;
+        border-bottom-color: var(--magentaColor);
+    }
+
+    &__close {
+        align-self: flex-start;
+        margin: 10px;
+        cursor: pointer;
+
+        @media (--mobile) {
+            margin-left: auto;
+        }
+
+    }
+
+    &.ng-hide-animate {
+        animation: slide-show 0.2s linear;
+     }
+
+    &.ng-hide-animate.ng-hide {
+        animation: slide-hide 0.2s linear;
+        animation-fill-mode: forwards;
+    }
+
+}
+
+.player {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: 95px;
+
+    &__play-button {
+        height: 95px;
+        min-width: 95px;
+        background: url('/src/assets/img/icons/play-circ-white.png') center no-repeat;
+        cursor: pointer;
+
+        &--playing {
+
+            background-image: url('/src/assets/img/icons/pause-circ-white.png');
+
+        }
+
+    }
+
+    &__info {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+
+    &__controls {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        margin-right: 10px;
+    }
+
+    &__like {
+         min-width: 29px;
+         height: 28px;
+         cursor: pointer;
+         background: url(/src/assets/img/icons/heart.png) no-repeat 0 0;
+
+        &:hover,
+        &--active {
+
+            background-position: 0 -28px;
+
+        }
+
+    }
+
+    &__volume-button {
+         min-width: 29px;
+         height: 28px;
+         margin: 0 10px;
+         cursor: pointer;
+         background: url(/src/assets/img/icons/volume.png) no-repeat 0 0;
+
+        &--middle {
+            background-position: 0 -28px;
+        }
+
+        &--muted {
+            background-position: 0 -56px;
+        }
+
+    }
+
+    &__volume-slider {
+
+        &-background {
+            height: 20px;
+            min-width: 85px;
+            margin: 0 10px;
+            cursor: pointer;
+            background: rgba(255,255,255,0.6);
+        }
+
+        &-indicator {
+            background: #fff;
+            height: 100%;
+            width: 75%;
+        }
+
+    }
+
+    &__song-title {
+        font-size: 15px;
+        overflow: hidden;
+
+        @media (--mobile) {
+            width: 250px;
+        }
+
+        div {
+            white-space: nowrap;
+
+            &.marqueue {
+                animation: marqueue 10s linear infinite;
+            }
+
+        }
+
+    }
+
+}
+
+@keyframes slide-hide {
+
+    0% {
+        overflow: hidden;
+    },
+    99% {
+        margin-top: 0;
+        overflow: hidden;
+    },
+    100% {
+        height: 0;
+        margin-top: 5px;
+        overflow: hidden;
+    }
+
+}
+
+@keyframes slide-show {
+
+    0% {
+        height: 0;
+        overflow: hidden;
+    }
+
+    99% {
+        overflow: hidden;
+    }
+    100% {
+        height: 95px;
+    }
+}
+
+@keyframes marqueue {
+    0% {
+        transform: translate(100%, 0);
+    }
+    100% {
+        transform: translate(-100%, 0)
+    }
+}

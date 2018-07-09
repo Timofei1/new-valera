@@ -1,0 +1,14 @@
+<div class="page broadcast-page">
+    <div class="broadcast-page__broadcast">
+        <img ng-src="https://mbradio.ru/images/broadcast/{{ broadcast.broadcast_id }}/{{ broadcast.broadcast_img }}"
+             class="broadcast-page__broadcast-img">
+        <div class="broadcast-page__broadcast-info">
+            <h2 class="broadcast-page__broadcast-title">{{ broadcast.broadcast_title }}</h2>
+            <p class="broadcast-page__broadcast-description" ng-bind-html="broadcast.broadcast_desc"></p>
+        </div>
+    </div>
+    <div class="broadcast-page__podcasts">
+        <div include-replace ng-include="'/src/components/podcast/podcast.tpl.html'" ng-repeat="podcast in broadcast.podcasts">
+        </div>
+    </div>
+</div>

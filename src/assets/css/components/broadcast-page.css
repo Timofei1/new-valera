@@ -1,0 +1,39 @@
+.broadcast-page {
+
+    &__broadcast {
+        display: flex;
+        flex-flow: row nowrap;
+        padding: 0 15px;
+        margin: 40px 0;
+
+        &-img {
+            width: 175px;
+            min-width: 175px;
+            height: 175px;
+            margin-right: 20px;
+            border: 5px solid #e5e5e5;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        &-title {
+            font-size: 24px;
+            color: #2e2e2e;
+        }
+
+        &-description {
+            font-size: 14px;
+        }
+
+    }
+
+    &__podcasts {
+
+        .podcast {
+            margin: 15px 10px;
+        }
+
+    }
+
+}

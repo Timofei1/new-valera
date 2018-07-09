@@ -1,0 +1,38 @@
+.sponsors {
+    padding: 100px 20px;
+    background: #fff;
+    border-top: 1px solid #EAEAEA;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+
+    &__sponsor {
+
+        &:first-child {
+            max-width: 290px;
+        }
+
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        max-width: 350px;
+
+        &:hover {
+         color: #000;
+        }
+
+    }
+
+    &__logo {
+        float: left;
+        margin-right: 10px;
+    }
+
+    &__title {
+
+    }
+
+
+
+}

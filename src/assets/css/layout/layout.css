@@ -1,0 +1,26 @@
+.layout {
+    padding: 20px 15px;
+    background: #fff;
+
+    &--columns {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    &__content {
+
+        &--column {
+            flex-grow: 1;
+        }
+
+    }
+
+    &__aside {
+
+        @media (--tablet) {
+            display: none;
+        }
+
+    }
+
+}

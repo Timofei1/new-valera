@@ -1,0 +1,108 @@
+.podcast {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 36px 10px 36px 25px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.07);
+
+    &__broadcast {
+        position: absolute;
+        right: 0;
+        top: 5px;
+        color: #adadad;
+        padding: 5px 10px;
+        text-decoration: underline;
+        font-size: 12px;
+
+        &:hover {
+            color: #27B27C;
+            text-decoration: none;
+        }
+
+    }
+
+    &__play-button {
+        background: url('/src/assets/img/icons/play-circ-green.png') center no-repeat;
+        width: 58px;
+        height: 58px;
+        margin-right: auto;
+        flex-shrink: 0;
+        cursor: pointer;
+
+        &--playing {
+            background-image: url('/src/assets/img/icons/pause-circ-green.png');
+        }
+
+    }
+
+    &__info {
+        flex-grow: 1;
+        margin-left: 45px;
+        font-family: Verdana, Arial, sans-serif;
+        line-height: 1.6em;
+        overflow: hidden;
+    }
+
+    &__title {
+        color: #5f6c72;
+        font-size: 15px;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__progress {
+        position: relative;
+        height: 5px;
+        width: 100%;
+        margin: 5px 0;
+        background: #e7e7e7;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+
+        &-indicator {
+            position: absolute;
+            left: 0;
+            height: 5px;
+            background: #009258;
+            width: 0;
+        }
+
+    }
+
+    &__time {
+        display: inline-block;
+        font-size: 10.2px;
+        color: #5f6c72;
+
+        &--duration {
+            margin-left: 20px;
+        }
+    }
+
+    &__volume {
+        float: right;
+        position: relative;
+        height: 5px;
+        width: 46px;
+        overflow: hidden;
+        cursor: pointer;
+        background: #e7e7e7;
+        margin-top: 13px;
+
+        &-indicator {
+            position: absolute;
+            left: 0;
+            height: 5px;
+            background: #009258;
+            width: 40%;
+        }
+
+    }
+
+}

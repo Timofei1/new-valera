@@ -1,0 +1,111 @@
+.podcasts {
+
+    display: flex;
+    flex-flow: row nowrap;
+    max-width: 100%;
+    background: #fff;
+    padding: 50px 30px;
+
+
+
+    &__image {
+        padding: 0 55px;
+        background: #F8F8F8;
+        text-align: center;
+        text-transform: uppercase;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+
+        h2 {
+            margin: 25px 0 0;
+            padding: 5px 0;
+            color: #339966;
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        p {
+            margin: 0 0 25px;
+            padding: 3px 0;
+            font-size: 18px;
+            color: #5f6c72;
+            font-weight: 300;
+        }
+
+    }
+
+    &__info {
+        width: 765px;
+        padding: 25px 15px 0;
+
+        @media (--tablet) {
+            width: 100%;
+            padding: 0;
+        }
+
+    }
+
+    &__header {
+        margin: 0;
+        font-size: 18px;
+        color: #010101;
+        text-transform: uppercase;
+    }
+
+    &__link {
+        float: right;
+        font-size: 14px;
+        color: #8d8d8d;
+
+        &:hover {
+            color: var(--magentaColor)
+        }
+
+    }
+
+    .podcast {
+        margin: 35px 0;
+    }
+
+    &__popular {
+        margin: 50px 20px;
+    }
+
+    &__broadcasts {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
+        overflow: hidden;
+
+
+        &-wrapper {
+            position: relative;
+            padding: 35px 35px 0;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        &-backward {
+             background: url('/src/assets/img/icons/prev.png') left center no-repeat;
+             width: 30px;
+             height: 50px;
+             margin-right: 15px;
+             cursor: pointer;
+             transform: translateY(80%);
+         }
+
+        &-forward {
+             background: url('/src/assets/img/icons/next.png') right center no-repeat;
+             width: 30px;
+             height: 50px;
+             margin-left: 15px;
+             cursor: pointer;
+             transform: translateY(80%);
+         }
+
+
+}
+
+}

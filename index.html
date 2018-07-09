@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Мегабайт</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <script src="/bower_components/angular/angular.js" defer></script>
+    <script src="/bower_components/angular-route/angular-route.js" defer></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js" defer></script>
+    <link rel="stylesheet" href="/build/bundle.css">
+    <script src="/build/bundle.js"></script>
+    <script src="/src/app.js" defer></script>
+    <base target="_blank">
+    <script src="//vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            VK.init(function() {
+                setInterval(newSizeWindow, 100);
+                function newSizeWindow() {
+                    VK.callMethod("resizeWindow",795,document.getElementById('wrapper').clientHeight);
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div class="main" id="wrapper">
+        <ng-include src="'/src/components/navigation/navigation.tpl.html'"></ng-include>
+
+        <div class="layout">
+            <div class="layout__content" ng-view></div>
+        </div>
+
+        <script>
+            mb.init();
+        </script>
+    </div>
+</body>
+</html>

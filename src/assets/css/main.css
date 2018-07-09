@@ -1,0 +1,233 @@
+@import 'normalize.css';
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,700,300,900);
+@import 'variables.css';
+@import 'layout/header.css';
+@import 'layout/islands.css';
+@import 'components/news.css';
+@import 'components/news-list.css';
+@import 'components/scroll-bar.css';
+@import 'components/videos.css';
+@import 'components/podcasts.css';
+@import 'components/broadcast.css';
+@import 'components/broadcast-page.css';
+@import 'components/podcast.css';
+@import 'components/print.css';
+@import 'components/social.css';
+@import 'components/sponsors.css';
+@import 'components/calendar.css';
+@import 'components/grid.css';
+@import 'components/publication.css';
+@import 'components/team.css';
+@import 'components/about.css';
+@import 'components/newspapers.css';
+@import 'components/become-an-author.css';
+@import 'layout/footer.css';
+@import 'layout/layout.css';
+@import 'layout/feed.css';
+
+body {
+    width: 100%;
+    font-family: "Open Sans", sans-serif, Arial;
+    font-size: 100%;
+    color: #000;
+    /*background: #F8F8F8;*/
+    background: #fff;
+    line-height: 1.35em;
+    -webkit-font-smoothing: antialiased !important;
+    text-rendering: optimizeLegibility !important;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        color: #ff0445;
+    }
+
+}
+
+.link {
+    color: var(--magentaColor);
+}
+
+.button {
+    position: relative;
+    width: 195px;
+    height: 40px;
+    margin: 10px auto;
+    border-radius: 30px;
+    border: 1px solid var(--magentaColor);
+    text-align: center;
+    color: var(--magentaColor);
+    background: #fff;
+    font-size: 14px;
+    line-height: 40px;
+    cursor: pointer;
+
+
+    &--left {
+        margin: 27px 40px auto auto;
+    }
+
+    &--inverse {
+        color: #fff;
+        background: var(--magentaColor);
+        border: 1px solid #fff;
+
+        &:hover {
+            color: #000;
+            background: #fff;
+        }
+    }
+
+    &--dark {
+        color: #fff;
+        background: var(--magentaColor);
+        border: 1px solid #fff;
+
+        &:hover {
+            background: color(var(--magentaColor) lightness(-10%));
+        }
+    }
+
+    &--animated {
+
+        padding-left: 20px;
+
+        &::before {
+            content: '...';
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            vertical-align: middle;
+            text-align: center;
+            color: #fff;
+            height: 40px;
+            width: 40px;
+            background: var(--magentaColor);
+            border-radius: 30px;
+            font-size: 26px;
+            line-height: 1em;
+            font-weight: 900;
+            transition: width .3s ease;
+        }
+
+        &:hover {
+
+            &::before {
+                width: 100%;
+            }
+        }
+
+    }
+
+}
+
+
+.main {
+    /*max-width: 1280px;*/
+    margin: 0 auto;
+}
+
+.loader {
+    position: relative;
+    height: 100%;
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 5px solid #ff1a47;
+        z-index: 100;
+    }
+
+
+    &::before {
+        border-right-color: #000000;
+        transform: translate(-50%, -50%);
+        animation: loader-before 1.5s infinite;
+    }
+
+    &::after {
+        border-right-color: transparent;
+        transform: translate(-50%, -50%) rotate(60deg);
+        animation: loader-after 1.5s infinite;
+     }
+
+    &--big {
+        &::after,
+        &::before {
+            width: 120px;
+            height: 120px;
+        }
+    }
+
+    &--hide {
+
+        div, h1, h2, h3, h4, h5, h6, p {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+    }
+
+}
+
+@keyframes loader-before {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    },
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+@keyframes loader-after {
+    0% {
+        transform: translate(-50%, -50%) rotate(60deg);
+    },
+    100% {
+        transform: translate(-50%, -50%) rotate(420deg);
+    }
+}
+
+.clearfix:after {
+     @apply --clearfix;
+ }
+
+.fl_l {
+    float: left;
+}
+.fl_r {
+    float: right;
+}
+
+.tablet-show {
+    display: none;
+}
+
+@media (--tablet) {
+
+    .tablet-show {
+        display: initial;
+    }
+
+    .tablet-hide {
+        display: none;
+    }
+}
+
+@media (--mobile) {
+
+    .mobile-hide {
+        display: none;
+    }
+
+}

@@ -1,0 +1,14 @@
+<div class="page">
+    <h1 class="page__header">Передачи</h1>
+    <div class="grid__broadcasts">
+        <ng-include include-replace src="'/src/components/broadcast/broadcast.tpl.html'" ng-repeat="broadcast in broadcasts"></ng-include>
+    </div>
+    <div class="grid__podcasts">
+        <h2 class="grid__podcasts-header">Последние эфиры</h2>
+        <div ng-repeat="month in podcasts | reverse">
+            <div class="grid__month" ng-if="month.length">{{ month.length > 0 ? month.month : '' }}</div>
+            <ng-include include-replace src="'/src/components/podcast/podcast.tpl.html'" ng-repeat="podcast in month"></ng-include>
+        </div>
+        <div class="button button--animated" ng-click="nextPage()">Загрузить еще</div>
+    </div>
+</div>

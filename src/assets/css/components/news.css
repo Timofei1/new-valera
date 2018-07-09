@@ -1,0 +1,202 @@
+.news {
+
+    position: relative;
+    flex: 1 1 240px;
+    min-height: 370px;
+    min-width: 200px;
+    margin: 0 7px 15px;
+    cursor: pointer;
+
+    &__image {
+        position: relative;
+        max-height: 200px;
+        overflow: hidden;
+        margin: -10px -10px 0;
+
+        img {
+            width: 100%;
+        }
+
+    }
+
+    &__image-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background: rgba(0, 0, 0, 0.7) url(/src/assets/img/icons/goggles.png) center center no-repeat;
+        transition: opacity 0.3s ease;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.35em;
+    }
+
+    &__info {
+        margin: 10px 0;
+        clear: both;
+    }
+
+    &__rubric {
+
+        position: relative;
+        display: block;
+        padding-left: 10px;
+        font-size: 12px;
+
+        &::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            left: 0;
+            top: 8px;
+            border-radius: 100%;
+            background: #0048e3;
+        }
+
+        &--study::before {
+            background: #0048e3;
+        }
+
+        &--editorial::before {
+            background: #00e366;
+        }
+
+        &--science::before {
+            background: #b03ae3;
+        }
+
+        &--days::before {
+            background: #f1c42c;
+        }
+
+        &--relax::before {
+             background: #f21a16;
+         }
+
+    }
+
+    &__views {
+        float: right;
+        position: relative;
+        margin-right: 20px;
+        padding-left: 14px;
+        color: #a8a8a8;
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: 500;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 5px;
+            background: url('/src/assets/img/icons/eye.png') center no-repeat;
+            background-size: contain;
+            width: 10px;
+            height: 10px;
+        }
+
+    }
+
+    &__date {
+         float: right;
+         color: #a8a8a8;
+         font-size: 10px;
+         font-weight: 500;
+         text-transform: uppercase;
+    }
+
+     &__lead {
+        margin: 1em 0;
+        color: #797979;
+        line-height: 1.4em;
+        font-size: 14px;
+        font-weight: 300;
+     }
+
+     &:hover {
+
+        & .news__image-overlay {
+            opacity: 1;
+        }
+
+        & .news__title {
+            color: var(--magentaColor);
+        }
+
+     }
+
+    &--hot {
+
+        max-width: 575px;
+        flex-basis: 575px;
+        height: 370px;
+
+        @media (--notebook) {
+            max-width: none;
+            flex-basis: 100%;
+        }
+
+        ^&__image-overlay {
+            background: linear-gradient(to top,
+                                    rgba(0, 0, 0, 0.9),
+                                    rgba(0, 0, 0, 0.75),
+                                    rgba(0, 0, 0, 0.5),
+                                    rgba(0, 0, 0, 0.3),
+                                    rgba(0, 0, 0, 0) 20%,
+                                    transparent);
+            opacity: 1;
+        }
+
+        ^&__image {
+            text-align: center;
+            margin-bottom: -15px;
+            height: calc(100% + 20px);
+            max-height: 390px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        ^&__info {
+            position: absolute;
+            bottom: 50px;
+            left: 30px;
+            color: #fff;
+        }
+        ^&__title {
+            position: absolute;
+            bottom: 25px;
+            left: 30px;
+            font-size: 24px;
+            font-weight: 300;
+            color: #fff;
+        }
+
+        ^&__views,
+        ^&__date,
+        ^&__lead {
+            display: none;
+         }
+
+        &:hover {
+
+            ^&__title {
+                color: #fff;
+                text-decoration: underline;
+            }
+
+        }
+
+    }
+
+}

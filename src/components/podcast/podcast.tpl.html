@@ -1,0 +1,15 @@
+<div class="podcast" podcast="podcast.link">
+    <a class="podcast__broadcast" ng-href="/broadcast/{{ podcast.broadcast.broadcast_link }}">{{ podcast.broadcast.broadcast_title }}</a>
+    <div class="podcast__play-button"></div>
+    <div class="podcast__info">
+        <div class="podcast__title">{{ podcast.title_podcast }} от {{ podcast.lastup | date }}</div>
+        <div class="podcast__progress">
+            <div class="podcast__progress-indicator"></div>
+        </div>
+        <time class="podcast__time podcast__time--current"></time>
+        <time class="podcast__time podcast__time--duration"></time>
+        <div class="podcast__volume">
+            <div class="podcast__volume-indicator"></div>
+        </div>
+    </div>
+</div>

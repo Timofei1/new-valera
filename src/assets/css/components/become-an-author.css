@@ -1,0 +1,49 @@
+.become-an-author {
+
+    text-align: center;
+
+    &__advantage {
+        display: inline-block;
+        max-width: 258px;
+        margin: 35px 20px;
+        vertical-align: top;
+        color: #323333;
+        font-size: 14px;
+
+        &-mark {
+            margin-bottom: 15px;
+        }
+
+        &-title,
+        &-description {
+            margin: 5px 0;
+        }
+    }
+
+    &__form {
+
+         outline: none;
+         font-size: 14px;
+         font-style: italic;
+         color: #939393;
+
+        input {
+            width: 280px;
+            height: 45px;
+            margin: 0 5px;
+            padding: 0 10px;
+            border: 1px solid #b7b7b7;
+        }
+
+        textarea {
+            display: block;
+            width: 910px;
+            height: 200px;
+            margin: 15px auto;
+            padding: 10px;
+            border: 1px solid #b7b7b7;
+        }
+
+    }
+
+}

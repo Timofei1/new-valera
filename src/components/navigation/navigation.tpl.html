@@ -1,0 +1,25 @@
+<div class="nav-wrapper" ng-controller="RadioController">
+    <div class="player-wrapper ng-hide-animate" radio>
+        <div class="player">
+            <div class="player__play-button"></div>
+            <div class="player__info">
+                <div class="player__controls">
+                    <div class="player__like {{ liked ? 'player__like--active' : '' }}" ng-click="like()"></div>
+                    <div class="player__volume-button"></div>
+                    <div class="player__volume-slider-background">
+                        <div class="player__volume-slider-indicator"></div>
+                    </div>
+                </div>
+                <div class="player__song-title">
+                    <div class="{{ currentSong.length > 35 ? 'marqueue' : '' }}">
+                        {{ currentSong }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="button button&#45;&#45;left button&#45;&#45;inverse mobile-hide">-->
+            <!--НАПИСАТЬ В ЭФИР-->
+        <!--</div>-->
+        <!--<img src="/src/assets/img/icons/cross.png" class="player-wrapper__close" ng-click="showPlayer = false">-->
+    </div>
+</div>

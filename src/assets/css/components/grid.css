@@ -1,0 +1,41 @@
+.grid {
+
+    &__broadcasts {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin: 40px 0 80px;
+
+    }
+
+    &__podcasts {
+
+        max-width: 870px;
+
+        &-header {
+            margin: 0;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #2e2e2e;
+            text-transform: uppercase;
+        }
+
+        .podcast {
+            margin: 15px 0;
+        }
+
+    }
+
+    &__month {
+        background: url('/src/assets/img/cloud.png') center no-repeat;
+        width: 158px;
+        height: 46px;
+        margin-bottom: 15px;
+        color: #fff;
+        line-height: 34px;
+        text-align: center;
+        font-style: italic;
+        font-weight: 600;
+    }
+
+}

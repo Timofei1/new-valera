@@ -1,0 +1,50 @@
+.scroll-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 16px;
+    padding: 10px 0;
+    cursor: pointer;
+
+    &--left {
+        left: 0;
+    }
+
+    &--right {
+        right: 0;
+    }
+
+    &__rail {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 7px;
+        width: 2px;
+        height: 100%;
+        background: rgba(0, 0, 0, .4);
+        border-radius: 16px;
+    }
+
+    &__slider {
+        position: absolute;
+        width: 4px;
+        height: 70px;
+        top: 0;
+        left: 6px;
+        background-color: rgba(70, 70, 70, 0.75);
+        border-radius: 16px;
+        transition: background-color .2s ease;
+
+        &--scrolling {
+            background-color: #ff1a47 !important;
+        }
+
+    }
+
+    &:hover {
+        ^&__slider {
+            background: rgba(0, 0, 0, 0.75);
+        }
+    }
+
+}

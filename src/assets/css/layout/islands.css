@@ -1,0 +1,15 @@
+.island {
+    color: #000;
+    background: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.07);
+
+    &--padded {
+         padding: 10px;
+    }
+
+    &--margined {
+        margin: 0 15px;
+    }
+
+}
+

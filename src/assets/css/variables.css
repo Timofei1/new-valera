@@ -1,0 +1,20 @@
+:root {
+
+    --darkGrayText: #49494b;
+    --blackText: #2e2e2e;
+
+    --magentaColor: #ff1a47;
+
+    --clearfix: {
+        content: ' ';
+        clear: both;
+        display: table;
+    }
+
+
+    @custom-media --notebook all and (max-width: 1280px);
+    @custom-media --tablet all and (max-width: 1024px);
+    @custom-media --mobile all and (max-width: 768px);
+    @custom-media --retina all and (-webkit-min-device-pixel-ratio: 1.5);
+
+}

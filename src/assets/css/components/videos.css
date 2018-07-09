@@ -1,0 +1,134 @@
+.videos {
+
+    background: url('/src/assets/img/lines-background.png') repeat left top #2A2B2B;
+    padding: 30px;
+
+    &__header {
+        display: block;
+        color: #fff;
+        font-size: 20px;
+         margin: 0 0 30px;
+         text-transform: uppercase;
+    }
+
+    &__list {
+        display: flex;
+        flex-flow: row nowrap;
+        overflow: hidden;
+    }
+
+    &__link {
+        float: right;
+        color: #8d8d8d;
+        text-decoration: none;
+        font-size: 14px;
+        text-transform: uppercase;
+
+        &:hover {
+            color: #787878;
+        }
+
+    }
+
+    &__item {
+        position: relative;
+        width: 300px;
+        min-width: 300px;
+        min-height: 240px;
+        margin-right: 13px;
+
+        &-cover {
+
+            width: 100%;
+            height: 185px;
+            overflow: hidden;
+
+            img  {
+                width: 100%;
+            }
+
+        }
+
+        &-overlay {
+            position: absolute;
+            width: 100%;
+            height: 185px;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.4);
+            transition: background 0.3s ease;
+
+            &::before {
+                content: '';
+                display: block;
+                background: url('/src/assets/img/icons/play.png') center no-repeat;
+                width: 100%;
+                height: 100%;
+                transition: transform 0.3s ease;
+            }
+
+        }
+
+         &-title {
+            width: 100%;
+            margin-top: 5px;
+            color: #fff;
+            text-align: center;
+            font-weight: 300;
+            transition: color 0.3s ease;
+
+            &--dark {
+                color: #000;
+            }
+
+         }
+
+        &:hover {
+
+            ^&__item-title {
+                color: #B9B9B9;
+            }
+
+            ^&__item-overlay {
+                background: rgba(0, 0, 0, 0.2);
+
+                &::before {
+                    transform: scale(0.9);
+                }
+
+            }
+
+        }
+
+    }
+
+    &__dots {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    &__dot {
+        width: 10px;
+        height: 10px;
+        margin: 0 10px;
+        border-radius: 50%;
+        background: #FF1942;
+        opacity: .25;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &--active {
+            width: 15px;
+            height: 15px;
+            opacity: .75;
+        }
+
+    }
+
+}
