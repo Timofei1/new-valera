@@ -1670,7 +1670,7 @@ app.directive('radio', function () {
     return function (scope, element) {
 
         let config = {
-            src: 'http://media.ifmo.ru:8002/live',
+            src: 'http://77.234.212.71:8002/live',
             controls: {
                 playButton: {
                     element: element[0].querySelector('.player__play-button'),
